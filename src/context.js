@@ -24,14 +24,15 @@ const AppProvider = ({children}) => {
                 wallet = await ethereum.request({
                     method: 'eth_requestAccounts'
                 })
+                if(wallet.length) {
+                    setAccount(wallet[0]);
+                } else {
+                    console.log("please connect to metamask");
+                }
             } catch(err) {
                 console.log(err);
             }
-            if(wallet.length) {
-                setAccount(wallet[0]);
-            } else {
-                console.log("please connect to metamask");
-            }
+
         } else {
             console.log("please download metamask");
         }
