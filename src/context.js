@@ -65,10 +65,14 @@ const AppProvider = ({children}) => {
                 abi["abi"],
                 signer
             )
+             try {
+                const txn = await deployed_contract.withdrawTips();
 
-            const txn = await deployed_contract.withdrawTips();
+                await txn.wait();
+             } catch(err) {
+                 console.log(err);
+             }
 
-            await txn.wait();
 
         }
     }
