@@ -49,8 +49,9 @@ const AppProvider = ({children}) => {
             abi["abi"],
             signer
         )
-
+        console.log("qqq");
         const txn = await deployed_contract.listAllCoffees();
+        console.log("pqpqpq");
         console.log(txn)
         setCoffees(txn)
         // console.log(coffees)
