@@ -39,6 +39,7 @@ const AppProvider = ({children}) => {
     }
     
     const listAllCoffees = async () => {
+        console.log("ppp0");
         const {ethereum} = window;
         const provider = new ethers.providers.Web3Provider(ethereum, "any");
         const signer = provider.getSigner();
